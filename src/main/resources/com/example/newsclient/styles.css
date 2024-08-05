@@ -1,0 +1,46 @@
+.anchor-pane {
+    -fx-background-color: #f0f0f0;
+}
+
+.list-view {
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+}
+
+.combo-box {
+    -fx-background-color: #fff;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+.scroll-pane {
+    -fx-background: #f0f0f0;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+.text-flow {
+    -fx-font-size: 14px;
+    -fx-text-fill: #444;
+}
