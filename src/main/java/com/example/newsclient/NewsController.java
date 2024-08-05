@@ -90,7 +90,7 @@ public class NewsController implements Initializable {
     }
 
     private ObservableList<News> loadNews() {
-        var newsArray = restTemplate.getForObject("http://localhost:8080/api/news-test", News[].class);
+        var newsArray = restTemplate.getForObject("http://localhost:8080/api/news", News[].class);
         newsList.clear();
         newsList.addAll(Arrays.asList(newsArray));
         return newsList;
