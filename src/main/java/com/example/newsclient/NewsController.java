@@ -116,7 +116,7 @@ public class NewsController implements Initializable {
         var viewItems = listView.getItems();
         boolean condition = !viewItems.isEmpty() && currentIndex < viewItems.size();
 
-        if (/*!viewItems.isEmpty() && currentIndex < viewItems.size()*/ condition) {
+        if (condition) {
             Text text = new Text(commonList.get(currentIndex).getDescription());
             textFlow.getChildren().add(text);
 
