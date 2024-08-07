@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class NewsController implements Initializable {
+public class NewsController implements Initializable, NewsLoader {
 
     RestTemplate restTemplate = new RestTemplate();
 
@@ -36,6 +36,8 @@ public class NewsController implements Initializable {
     private static final String DAY = "Day";
 
     private static final String EVENING = "Evening";
+
+    private final static String NEWS_URL = "http://localhost:8080/api/news";
 
     @FXML
     private ComboBox<String> comboBox;
@@ -86,11 +88,12 @@ public class NewsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeComboBox();
-        newsList = loadNews();
+        newsList = loadNewsByURL(NEWS_URL);
     }
 
-    private ObservableList<News> loadNews() {
-        var newsArray = restTemplate.getForObject("http://localhost:8080/api/news", News[].class);
+    @Override
+    public ObservableList<News> loadNewsByURL(String url) {
+        var newsArray = restTemplate.getForObject(url, News[].class);
         newsList.clear();
         newsList.addAll(Arrays.asList(newsArray));
         return newsList;
